@@ -1,0 +1,480 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Domnoo Restaurant & Pizza HTML Template</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'images/fav2.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/fav2.ico' %}" type="image/x-icon">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <!-- color stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}" id="ui-theme-color">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+<body>
+{% if messages %}
+{% for message in messages  %}
+    <div class="alert alert-{{ message.tags }}" role="alert">{{ message }}</div>
+{% endfor %}
+{% endif %}
+
+	<div class="loader_wrapper">
+        <div class="loader">
+			<img src="{% static 'images/loader.gif' %}" alt="" class="img-fluid">
+        </div>
+    </div>
+    <!--// loader_wrapper -->
+
+	<div id="wrapper">
+		<header class="new-block main-header">
+			<div class="main-nav new-block">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="logo">
+								<a href="{% url 'home'%}"><img src="{% static 'images/logo.png' %}" alt="logo" class="img-responsive"></a>
+							</div>
+							<div class="location-block">
+								<p>Austrlia</p>
+								<span>+00 123 456 789</span>
+							</div>
+							<a href="#" class="nav-opener"><i class="fa fa-bars"></i></a>
+							<nav class="nav">
+								<ul class="list-unstyled">
+									<li class="drop active"><a href="{% url 'home'%}">Home</a></li>
+									<li class="drop"><a href="#">Menu</a>
+                                        <ul class="drop-down">
+                                            {% for rs in category %}
+											<li><a href="{% url 'category_product' rs.id rs.slug %}">{{ rs.title }}</a></li>
+											{% endfor %}
+										</ul>
+                                    </li>
+                                    <li><a href="{% url 'aboutus' %}">About</a></li>
+									<li class="drop"><a href="{% url 'blog'%}">Blog</a></li>
+                                    <li><a href="{% url 'contactus'%}">Contact Us</a></li>
+                                </ul>
+							</nav>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</header> <!-- header -->
+
+		<div class="banner slider1 new-block">
+			<div class="fixed-bg" style="background: url('{% static 'images/slider-bg1.jpg'%}');"></div>
+			<div class="slider owl-carousel owl-theme">
+			    <div class="item">
+			    	<div class="slider-block slide1 new-block">
+			    		<div class="container-fluid">
+				    		<div class="row">
+				    			<div class="col-lg-6 col-md-6 col-sm-6">
+				    				<div class="text-block">
+				    					<div class="img-block ab1" data-animation-in="bounceInDown" data-animation-out="animate-out fadeOutRight">
+				    						<img src="{% static 'images/pizza.png' %}" alt="" class="img-responsive">
+				    					</div>
+				    					<h1 class="text-stl1" data-animation-in="lightSpeedIn" data-animation-out="animate-out fadeOutRight">buy get one free</h1>
+				    					<div class="number-block" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutRight">
+				    						<p class="text-stl2">Aliquam laoreet orci quis risus vulputate tempor Quisque aliquetmattis mattis tortor nibh cursus lorem</p>
+				    						<h2 class="text-stl3">+00 123 456 789</h2>
+				    						<div class="text-center">
+					    						<a href="#" class="btn1 stl2">About More</a>
+					    						<a href="#" class="btn1 stl1">Add to Cart</a>
+				    						</div>
+				    					</div>
+				    				</div>
+				    			</div>
+				    			<div class="col-lg-6 col-md-6 col-sm-6">
+				    				<div class="img-block img2">
+				    					<div class="img-holder" data-animation-in="fadeInDown" data-animation-out="animate-out fadeOutRight">
+				    						<img src="{% static 'images/pz.png' %}" alt="" class="img-responsive">
+				    					</div>
+				    				</div>
+				    			</div>
+				    		</div>
+				    	</div>
+				    </div><!-- .slider-block -->
+				</div>
+				<div class="item">
+			    	<div class="slider-block slide1 new-block">
+			    		<div class="container-fluid">
+				    		<div class="row">
+				    			<div class="col-lg-6 col-md-6 col-sm-6">
+				    				<div class="text-block">
+				    					<div class="img-block ab1" data-animation-in="bounceInDown" data-animation-out="animate-out fadeOutRight">
+				    						<img src="{% static 'images/pizza.png' %}" alt="" class="img-responsive">
+				    					</div>
+				    					<h1 class="text-stl1" data-animation-in="lightSpeedIn" data-animation-out="animate-out fadeOutRight">buy get one free</h1>
+				    					<div class="number-block" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutRight">
+				    						<p class="text-stl2">Aliquam laoreet orci quis risus vulputate tempor Quisque aliquetmattis mattis tortor nibh cursus lorem</p>
+				    						<h2 class="text-stl3">+00 123 456 789</h2>
+				    						<div class="text-center">
+                                            </div>
+				    					</div>
+				    				</div>
+				    			</div>
+				    			<div class="col-lg-6 col-md-6 col-sm-6">
+				    				<div class="img-block img2">
+				    					<div class="img-holder" data-animation-in="fadeInDown" data-animation-out="animate-out fadeOutRight">
+				    						<img src="{% static 'images/sldr.png' %}" alt="" class="img-responsive">
+				    					</div>
+				    				</div>
+				    			</div>
+				    		</div>
+				    	</div>
+				    </div><!-- .slider-block -->
+				</div>
+			</div>
+		</div><!-- banner -->
+
+				
+
+
+		<section class="special-offers-sec new-block">
+			<div class="special-offer-inr-block new-block">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="title">
+								<p class="top-h">Ours  Category</p>
+								<h2>Category Products</h2>
+								<div class="btm-style"><span><img src="{% static 'images/btm-style.png' %}" alt="" class="img-responsive"></span></div>
+							</div>
+						</div>
+						<div class="col-lg-12 pd0">
+							<div class="special-offer-block ol_flr new-block">
+								<div class="ol_flr">
+                                    <div class="clearfix"></div>
+									<div class="slider-flr" id="filter_itm1">
+                                        {% for rs in category %}
+							    		<div class="js-filter-chicken">
+							    			<div class="block-stl2">
+							    				<div class="img-holder">
+							    					<img src="{{ rs.image.url }}" alt="" class="img-responsive">
+							    				</div>
+							    				<div class="text-block">
+							    					<h3>{{ rs.title }}</h3>
+                                                </div>
+							    				<div class="btn-sec">
+						    						<a href="{% url 'category_product' rs.id rs.slug %}" class="btn1 stl2">About More</a>
+                                                </div>
+							    			</div>
+							    		</div>
+                                        {% endfor %}
+							    	</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+        <section class="spl-offer new-block">
+			<div class="container-fluid c-grid">
+				<div class="row">
+					<div class="grid1">
+						<div class="block-stl3 stl1">
+							<div class="fixed-bg" style="background: url('{% static 'images/img6.jpg'%}');"></div>
+							<div class="img-holder">
+								<img src="{% static 'images/img6.png' %}" alt="" class="img-responsive">
+							</div>
+							<div class="offer-block">
+								<p class="top-h">combo pack offer</p>
+								<h2>want something real & juicy ?</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare placerat tellus.</p>
+
+
+							</div>
+						</div>
+						<div class="c-grid2">
+							<div class="col1">
+								<div class="block-stl3 stl3">
+									<div class="img-holder">
+										<img src="{% static 'images/img7.png' %}" alt="" class="img-responsive">
+									</div>
+									<div class="offer-block">
+										<h2>new arrivals</h2>
+										<p>Lorem ipsum dolor sit amconsetur adipiscing elit. Integer</p>
+
+
+									</div>
+								</div>
+							</div>
+							<div class="col2">
+								<div class="block-stl3 bg9 stl4">
+									<div class="img-holder">
+										<img src="{% static 'images/img8.png' %}" alt="" class="img-responsive">
+									</div>
+									<div class="offer-block">
+										<h2>hot chicken</h2>
+										<p>An to our fun day.Lorem ipsum dolor sit aadipiscing elit</p>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid2">
+						<div class="block-stl3 stl2">
+							<div class="fixed-bg" style="background: url('{% static 'images/img9.jpg'%}');"></div>
+							<div class="img-holder">
+								<img src="{% static 'images/img9.png' %}" alt="" class="img-responsive">
+							</div>
+							<div class="offer-block">
+								<p class="top-h">sunday offer</p>
+								<h2>wowooo combo pack special offer</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare.</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="deal-of-day new-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="title">
+							<p class="top-h">winter special offer</p>
+							<h2>deal of the day</h2>
+							<div class="btm-style"><span><img src="{% static 'images/btm-style.png' %}" alt="" class="img-responsive"></span></div>
+                        </div>
+					</div>
+					<div class="col-lg-12 text-center">
+                    </div>
+					<div class="col-lg-12">
+						<div class="item-slider2 owl-carousel owl-theme">
+                            {% for rs in product_latest %}
+							<div class="item">
+								<div class="block-stl2">
+				    				<div class="img-holder">
+				    					<img src="{{ rs.image.url }}" alt="" class="img-responsive">
+				    				</div>
+				    				<div class="text-block">
+				    					<h3>{{ rs.title }}</h3>
+                                        <p class="price"><span>{{ rs.price }}</span></p>
+				    				</div>
+			    					<div class="btn-sec">
+			    						<a href="{% url 'product_detail' rs.id rs.slug %}" class="btn1 stl2">About More</a>
+                                    </div>
+                                </div>
+							</div>
+                            {% endfor %}
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="amezing-offers new-block">
+			<div class="overlay"></div>
+			<div class="fixed-bg parallax" style="background: url('{% static 'images/bg1.png'%}');"></div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="img-holder">
+							<img src="{% static 'images/pz1.png' %}" alt="" class="img-responsive">
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="text-block-stl1">
+							<div class="title">
+								<p class="top-h">amazing offers online</p>
+{#								<h2>50% off pizzas online</h2>#}
+								<p class="bottom-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare placerat tellus sit amet ullamcorper.</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<section class="this-month-blog new-block">
+			<div class="container-fluid no-gutter">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="title">
+							<p class="top-h">this month</p>
+							<h2>Our blog</h2>
+							<div class="btm-style"><span><img src="{% static 'images/btm-style.png' %}" alt="" class="img-responsive"></span></div>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="blog-slider1 owl-theme owl-carousel">
+                            {% for rs in blog %}
+							<div class="item">
+								<div class="blog-stl1">
+									<div class="img-holder">
+										<img src="{{ rs.image.url }}" alt="" class="img-responsive" />
+										<div class="ovrl-block">
+											<h3>{{ rs.title }}</h3>
+											<a href="{% url 'blog_detail' rs.id %}" class="btn1 stl2">read more</a>
+										</div>
+										<ul class="blog-info-nav">
+                                            <li><a href="#"><i class="flaticon-calendar"></i>{{ rs.create_at }}</a></li>
+			                            </ul>
+									</div>
+								</div>
+							</div>
+                            {% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="main-footer new-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+						<div class="footer-head">
+							<h3>About Us :</h3>
+						</div>
+						<div class="footer-content">
+							<p>Donec tincidunt, augue a convallis cursus, sapien eros efficitur sem in placerat sapien est nec quam.</p>
+							<a href="#" class="link">Read More</a>
+							<ul class="list-unstyled card-block">
+								<li><a href="#"><img src="{% static 'images/crt1.png' %}" alt=""></a></li>
+								<li><a href="#"><img src="{% static 'images/crt2.png' %}" alt=""></a></li>
+								<li><a href="#"><img src="{% static 'images/crt3.png' %}" alt=""></a></li>
+								<li><a href="#"><img src="{% static 'images/crt4.png' %}" alt=""></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+						<div class="our-company">
+							<div class="footer-head">
+								<h3>Our Company :</h3>
+							</div>
+							<div class="footer-content">
+								<ul class="list-unstyled">
+									<li><a href="#">New In</a></li>
+									<li><a href="#">Pizza murgon</a></li>
+									<li><a href="#">Burger king</a></li>
+									<li><a href="#">Fried Chicken</a></li>
+									<li><a href="#">Mocktail</a></li>
+									<li><a href="#">Top Brands</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+						<div class="footer-head">
+							<h3>Customer Care :</h3>
+						</div>
+						<div class="footer-content">
+							<ul class="list-unstyled">
+								<li><a href="#">New In</a></li>
+								<li><a href="#">Pizza murgon</a></li>
+								<li><a href="#">Burger king</a></li>
+								<li><a href="#">Fried Chicken</a></li>
+								<li><a href="#">Mocktail</a></li>
+								<li><a href="#">Top Brands</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+						<div class="flickr">
+							<div class="footer-head">
+								<h3>Get Flickr :</h3>
+							</div>
+							<div class="footer-content">
+								<ul class="list-unstyled">
+									<li><a href="#"><img src="{% static 'images/Layer-12.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-13.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-14.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-15.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-16.png' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-17.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-18.jpg' %}" alt="" class="img-responsive"></a></li>
+									<li><a href="#"><img src="{% static 'images/Layer-19.jpg' %}" alt="" class="img-responsive"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="copy-right">
+			<div class="container">
+				<p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
+				<ul class="social-nav">
+					<li><a href="#"><i class="flaticon-facebook-logo"></i></a></li>
+					<li><a href="#"><i class="flaticon-twitter"></i></a></li>
+					<li><a href="#"><i class="flaticon-google-plus-logo"></i></a></li>
+					<li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
+					<li><a href="#"><i class="flaticon-behance"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<span id="go_to_top" class="go-to-top"><i class="flaticon-up-arrow"></i></span>
+
+		<div class="theme-menu hide-sidebar">
+			<h2>Choose your color</h2>
+			<div id="style-switcher">
+				<ul class="colors theme-btn">
+					<li data-path="css/colors.css" data-url="images"> 
+						<p class="btn clr-style" style="background:#c10a28;"></p>
+					</li>
+					<li data-path="css/colors2.css" data-url="images/clr2">
+						<p class="btn clr-style" style="background:#f1b601;"></p>
+					</li>
+					<li data-path="css/colors3.css" data-url="images/clr3">
+						<p class="btn clr-style" style="background:#0a84c1;"></p>
+					</li>
+					<li data-path="css/colors4.css" data-url="images/clr4"> 
+						<p class="btn clr-style" style="background:#02a8aa;"></p>
+					</li>
+					<li data-path="css/colors5.css" data-url="images/clr5">
+						<p class="btn clr-style" style="background:#db780d;"></p>
+					</li>
+					<li data-path="css/colors6.css" data-url="images/clr6">
+						<p class="btn clr-style" style="background:#e54c04;"></p>
+					</li>
+				</ul>
+			</div>
+			<button class="btn btn-clr"><i class="fas fa-paint-brush"></i></button>
+		</div>
+	</div><!-- #wrapper -->
+
+
+	<!-- include jQuery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- bootstrap -->
+    <script src="{% static 'js/bootstrap.min.html' %}"></script>
+    <!-- bootstrap -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- slick slider  -->
+	<script src="{% static 'js/slick.js' %}"></script>
+	<!-- dscountdown  -->
+	<script src="{% static 'js/dscountdown.min.js' %}"></script>
+    <!-- jquery.nice-select -->
+    <script src="{% static 'js/jquery.nice-select.js' %}"></script>
+    <!-- magnific-popup -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Mixitup -->
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP1lPhUhDU6MINpruPDinAzXffRlpzzFo"></script>
+	<script src="{% static 'js/map.js' %}"></script>
+    <!-- custom js -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+
+
+</html>

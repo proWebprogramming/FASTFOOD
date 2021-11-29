@@ -1,0 +1,1 @@
+web: gunicorn FASTFOOD.wsgi --log-file -
